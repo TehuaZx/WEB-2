@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejemplo DOM con JS</title>
+	<link rel="stylesheet" href="t6.css">
+</head>
+<body>
+	<!-- este elemnto se modificara con JS -->
+	<h1 id="titulo"> Ejemplos de objetos DOM</h1>
+
+	<!-- parrafo que cambiaremos con js -->
+	<p id ="mensaje"> este texto puede modificarse con js</p>
+
+	<!-- input para captrar inofrmacion -->
+	<input type="text" id="nombre" placeholder="ingrese su nombre">
+	<button id="btnMostrar">enviar</button>
+	<br><br>
+ <!-- botones para modificar elemntos -->
+  <button id="btnTitulo">cambiar titulo</button>
+  <button id="btnColor">cambiar color</button>
+  <button id="btnAgregar">agregar elemento</button>
+  <button id="btnEliminar">eliminar ultimo elemento</button>
+
+  <!-- contenedor donde agregaremos elementos dinamicamente -->
+   <div class="caja">
+	<h3>elementos agregados</h3>
+	<ul id="lista">
+		<li>elemento iniciar</li>
+	</ul>
+   </div>
+
+
+<script src= "appdelcss.js"></script>
+</body>
+</html>

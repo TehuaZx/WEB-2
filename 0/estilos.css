@@ -1,0 +1,19 @@
+.calculadora {
+    width: 300px;
+    margin: 50px auto;
+    border: 2px solid black;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: aquamarine;
+    
+}
+input[type="button"]{
+width: 60px;
+height: 60px;
+margin: 5px;
+font-size: 18px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+

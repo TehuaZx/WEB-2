@@ -1,0 +1,10 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    padding: 200px;
+}
+table,th,td{
+    border: 1px solid red;
+    padding:25px;
+    border-collapse: collapse;
+    background-color: bisque;
+}

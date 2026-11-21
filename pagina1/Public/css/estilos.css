@@ -1,0 +1,24 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+} 
+header{
+    background-color: coral;
+    color: white;
+    padding: 10px 0px;
+    text-align: center;
+}
+main{
+    padding: 20px;
+    text-align: center;
+}
+footer{
+    background-color: bisque;
+    color: blue;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

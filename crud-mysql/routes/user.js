@@ -2,13 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-const isDbAvailable = () => ['authenticated', 'connected'].includes(db.state);
-
 const getUsers = (callback) => {
-  if (!isDbAvailable()) {
-    return callback(new Error('MySQL no disponible'), null);
-  }
-
   const consulta = 'SELECT id, nombre, correo FROM users ORDER BY id DESC';
 
   db.query(consulta, (err, results) => {
@@ -47,10 +41,6 @@ router.post('/add', (req, res) => {
     return res.status(400).json({ error: 'Nombre y correo son obligatorios' });
   }
 
-  if (!isDbAvailable()) {
-    return res.status(503).json({ error: 'La base de datos no está disponible en este momento.' });
-  }
-
   const validateQuery = 'SELECT id FROM users WHERE correo = ? LIMIT 1';
   const insertQuery = 'INSERT INTO users (nombre, correo) VALUES (?, ?)';
 
@@ -83,10 +73,6 @@ router.post('/add', (req, res) => {
 router.get('/edit/:id', (req, res) => {
   const consulta = 'SELECT id, nombre, correo FROM users WHERE id = ?';
 
-  if (!isDbAvailable()) {
-    return res.status(503).send('La base de datos no está disponible');
-  }
-
   db.query(consulta, [req.params.id], (err, results) => {
     if (err) {
       console.error(err);
@@ -109,10 +95,6 @@ router.post('/edit/:id', (req, res) => {
 
   if (!nombre || !correo) {
     return res.status(400).json({ error: 'Nombre y correo son obligatorios' });
-  }
-
-  if (!isDbAvailable()) {
-    return res.status(503).json({ error: 'La base de datos no está disponible' });
   }
 
   const duplicateQuery = 'SELECT id FROM users WHERE correo = ? AND id <> ? LIMIT 1';
@@ -143,10 +125,6 @@ router.post('/edit/:id', (req, res) => {
 });
 
 router.post('/delete/:id', (req, res) => {
-  if (!isDbAvailable()) {
-    return res.status(503).send('La base de datos no está disponible');
-  }
-
   const query = 'DELETE FROM users WHERE id = ?';
 
   db.query(query, [req.params.id], (err) => {

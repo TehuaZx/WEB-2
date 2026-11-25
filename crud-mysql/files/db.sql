@@ -1,7 +1,0 @@
-CREATE DATABASE crud_db;
-USE crud_db;
-CREATE TABLE users(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(250) NOT NULL,
-    correo VARCHAR(250)NOT NULL
-);

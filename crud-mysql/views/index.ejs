@@ -9,6 +9,9 @@
 <body>
 <h1>Hola mundo</h1>
 <h1>Usuarios</h1>
+<% if (error) { %>
+<p role="alert"><%= error %></p>
+<% } %>
 <!-- Formulario para agregar un nuevo usuario -->
 <form id="addUserForm" action="/add" method="post">
 <label for="name">Nombre:</label>
